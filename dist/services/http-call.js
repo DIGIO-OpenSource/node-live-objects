@@ -9,25 +9,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const http_call_1 = require("./services/http-call");
-class LiveObjectsApi {
+const axios_1 = require("axios");
+axios_1.default.defaults.baseURL = 'https://liveobjects.orange-business.com/api';
+class HttpCall {
     constructor(config) {
-        this.api_key = config.api_key;
+        axios_1.default.defaults.headers.common['X-API-Key'] = config.apiKey;
     }
-    getMonthlyAccountingMetrics(options) {
+    get(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            const call = new http_call_1.default({
-                apiKey: this.api_key
-            });
-            const result = yield call.get({
-                url: '/v1/accounting/monthly',
-                params: options
-            });
-            return result.data;
+            try {
+                const response = yield axios_1.default({
+                    method: 'get',
+                    url: options.url,
+                    params: options.params
+                });
+                return response;
+            }
+            catch (error) {
+                return error;
+            }
         });
     }
-    getApiKey() {
-        return this.api_key;
-    }
 }
-exports.default = LiveObjectsApi;
+exports.default = HttpCall;

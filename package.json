@@ -16,5 +16,8 @@
     "publish-beta": "npm run build && npm publish --tag beta",
     "publish-dryrun": "npm run build && npm publish --dry-run",
     "rebuild": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
   }
 }
