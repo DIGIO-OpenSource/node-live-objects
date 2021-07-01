@@ -1,0 +1,20 @@
+{
+  "name": "node-liveobjects",
+  "version": "1.0.0",
+  "description": "This package is a wrapper around Live Objects API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "start": "npm run clean && npm run build && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "publish-lib": "npm run build && npm publish",
+    "publish-beta": "npm run build && npm publish --tag beta",
+    "publish-dryrun": "npm run build && npm publish --dry-run",
+    "rebuild": "npm run clean && npm run build"
+  }
+}
