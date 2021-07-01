@@ -1,8 +1,6 @@
 import { LiveObjectsConfig } from "./types/endpoints/general/options";
-import { GetMonthlyAccountingMetricsOptions } from "./types/endpoints/accounting/options";
+import Accounting from './accounting';
 export default class LiveObjectsApi {
-    api_key: string;
+    accounting: Accounting;
     constructor(config: LiveObjectsConfig);
-    getMonthlyAccountingMetrics(options: GetMonthlyAccountingMetricsOptions): Promise<any>;
-    getApiKey(): string;
 }

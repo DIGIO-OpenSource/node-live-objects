@@ -12,12 +12,11 @@ export default class HttpCall {
 
   async get(options: GetOptions){
     try {
-      const response = await axios({
+      return await axios({
         method: 'get',
         url: options.url,
         params: options.params
       })
-      return response
     } catch (error) {
       return error
     }
