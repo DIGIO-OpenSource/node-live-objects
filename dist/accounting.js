@@ -19,11 +19,16 @@ class Accounting {
             const call = new http_call_1.default({
                 apiKey: this.api_key
             });
-            const result = yield call.get({
-                url: '/v1/accounting/monthly',
-                params: options
-            });
-            return result.data;
+            try {
+                const result = yield call.get({
+                    url: '/v1/accounting/monthly',
+                    params: options
+                });
+                return result.data;
+            }
+            catch (e) {
+                throw new Error(e.message);
+            }
         });
     }
 }

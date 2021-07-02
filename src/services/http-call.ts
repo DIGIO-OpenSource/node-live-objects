@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { GetOptions, CallConfig } from '../types/services/http-call';
+import axios, { AxiosError, AxiosPromise, AxiosResponse } from 'axios';
+import { GetOptions, CallConfig, ResponseError } from '../types/services/http-call';
 
 axios.defaults.baseURL = 'https://liveobjects.orange-business.com/api'
 
@@ -10,7 +10,8 @@ export default class HttpCall {
     axios.defaults.headers.common['X-API-Key'] = config.apiKey;
   }
 
-  async get(options: GetOptions){
+   async get(options: GetOptions): Promise<AxiosResponse> {
+     console.log(options)
     try {
       return await axios({
         method: 'get',
@@ -18,7 +19,15 @@ export default class HttpCall {
         params: options.params
       })
     } catch (error) {
-      return error
+      this.processError(error)
+    }
+  }
+
+  processError (error: AxiosError): string | AxiosError {
+    if (axios.isAxiosError(error)) {
+      throw new Error(JSON.stringify(error.response.data));
+    } else {
+      throw new Error('General Error');
     }
   }
 

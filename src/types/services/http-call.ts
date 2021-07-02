@@ -4,9 +4,21 @@ export interface CallConfig{
 
 export interface GetOptions{
 	url: string,
-	params: Object
+	params: object
 }
 
 export interface PostOptions{
 	url: string
+}
+
+export interface ResponseError{
+	config: object,
+	request: object,
+	response: {
+		status: Number,
+		statusText: string,
+		header: object,
+		config: object,
+		data: object
+	}
 }

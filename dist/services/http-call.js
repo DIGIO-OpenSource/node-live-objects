@@ -17,6 +17,7 @@ class HttpCall {
     }
     get(options) {
         return __awaiter(this, void 0, void 0, function* () {
+            console.log(options);
             try {
                 return yield axios_1.default({
                     method: 'get',
@@ -25,9 +26,17 @@ class HttpCall {
                 });
             }
             catch (error) {
-                return error;
+                this.processError(error);
             }
         });
+    }
+    processError(error) {
+        if (axios_1.default.isAxiosError(error)) {
+            throw new Error(JSON.stringify(error.response.data));
+        }
+        else {
+            throw new Error('General Error');
+        }
     }
 }
 exports.default = HttpCall;
