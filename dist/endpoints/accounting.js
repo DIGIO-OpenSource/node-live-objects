@@ -9,48 +9,45 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const axios_1 = require("axios");
-axios_1.default.defaults.baseURL = 'https://liveobjects.orange-business.com/api';
-class HttpCall {
+const enpoints_1 = require("../constants/enpoints");
+const http_call_1 = require("../services/http-call");
+class Accounting {
     constructor(config) {
-        axios_1.default.defaults.headers.common['X-API-Key'] = config.apiKey;
+        this.api_key = config.api_key;
     }
-    get(options) {
+    getMonthlyAccountingMetrics(options) {
         return __awaiter(this, void 0, void 0, function* () {
+            const call = new http_call_1.default({
+                apiKey: this.api_key
+            });
             try {
-                return yield axios_1.default({
-                    method: 'get',
-                    url: options.url,
-                    params: options.params
+                const result = yield call.get({
+                    url: enpoints_1.URLS.ACCOUNTING.GET_MONTHLY_ACCOUNTING_METRICS,
+                    params: options
                 });
+                return result.data;
             }
-            catch (error) {
-                this.processError(error);
+            catch (e) {
+                throw new Error(e.message);
             }
         });
     }
-    post(options) {
+    getDailyAccountingMetrics(options) {
         return __awaiter(this, void 0, void 0, function* () {
+            const call = new http_call_1.default({
+                apiKey: this.api_key
+            });
             try {
-                return yield axios_1.default({
-                    method: 'post',
-                    url: options.url,
-                    params: options.params,
-                    data: options.data
+                const result = yield call.get({
+                    url: enpoints_1.URLS.ACCOUNTING.GET_DAILY_ACCOUNTING_METRICS,
+                    params: options
                 });
+                return result.data;
             }
-            catch (error) {
-                this.processError(error);
+            catch (e) {
+                throw new Error(e.message);
             }
         });
-    }
-    processError(error) {
-        if (axios_1.default.isAxiosError(error)) {
-            throw new Error(JSON.stringify(error.response.data));
-        }
-        else {
-            throw new Error('General Error');
-        }
     }
 }
-exports.default = HttpCall;
+exports.default = Accounting;

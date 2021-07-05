@@ -9,20 +9,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const http_call_1 = require("./services/http-call");
-class Accounting {
+const enpoints_1 = require("../constants/enpoints");
+const http_call_1 = require("../services/http-call");
+class DmDataSearch {
     constructor(config) {
         this.api_key = config.api_key;
     }
-    getMonthlyAccountingMetrics(options) {
+    searchHits(options) {
         return __awaiter(this, void 0, void 0, function* () {
             const call = new http_call_1.default({
                 apiKey: this.api_key
             });
             try {
-                const result = yield call.get({
-                    url: '/v1/accounting/monthly',
-                    params: options
+                const result = yield call.post({
+                    url: enpoints_1.URLS.DM_DATA_SEARCH.SEARCH_HITS,
+                    params: {
+                        trackTotalHits: options.trackTotalHits
+                    },
+                    data: {
+                        dslRequest: options.dslRequest
+                    }
                 });
                 return result.data;
             }
@@ -32,4 +38,4 @@ class Accounting {
         });
     }
 }
-exports.default = Accounting;
+exports.default = DmDataSearch;
