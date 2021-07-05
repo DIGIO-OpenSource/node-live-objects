@@ -6,8 +6,8 @@ import axios from "axios";
 
 export default class LiveObjectsApi {
 
-  accounting: Accounting
-  dmDataSearch: DmDataSearch
+  accounting: Accounting;
+  dmDataSearch: DmDataSearch;
   command: Command
 
   constructor( config: LiveObjectsConfig){
