@@ -15,58 +15,10 @@ class HttpCall {
     constructor(config) {
         axios_1.default.defaults.headers.common['X-API-Key'] = config.apiKey;
     }
-    get(options) {
+    request(options) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                return yield axios_1.default({
-                    method: 'get',
-                    url: options.url,
-                    params: options.params,
-                    headers: options.headers
-                });
-            }
-            catch (error) {
-                this.processError(error);
-            }
-        });
-    }
-    post(options) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                return yield axios_1.default({
-                    method: 'post',
-                    url: options.url,
-                    params: options.params,
-                    data: options.data
-                });
-            }
-            catch (error) {
-                this.processError(error);
-            }
-        });
-    }
-    put(options) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                return yield axios_1.default({
-                    method: 'put',
-                    url: options.url,
-                    params: options.params,
-                    data: options.data
-                });
-            }
-            catch (error) {
-                this.processError(error);
-            }
-        });
-    }
-    delete(options) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                return yield axios_1.default({
-                    method: 'delete',
-                    url: options.url,
-                });
+                return yield axios_1.default(options);
             }
             catch (error) {
                 this.processError(error);
@@ -74,7 +26,6 @@ class HttpCall {
         });
     }
     processError(error) {
-        console.log(error);
         if (axios_1.default.isAxiosError(error)) {
             throw new Error(JSON.stringify(error.response.data));
         }

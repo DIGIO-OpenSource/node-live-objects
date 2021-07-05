@@ -17,12 +17,13 @@ export default class DmDataSearch{
     });
 
     try{
-      const result = await call.post({
+      const result = await call.request({
+        method: 'post',
         url: URLS.DM_DATA_SEARCH.SEARCH,
         params: {
           trackTotalHits: options.trackTotalHits
         },
-        data: options.dslRequest
+        data: options.dslRequest || {}
       })
       return result.data
     }
@@ -37,12 +38,13 @@ export default class DmDataSearch{
     });
 
     try{
-      const result = await call.post({
+      const result = await call.request({
+        method: 'post',
         url: URLS.DM_DATA_SEARCH.SEARCH_HITS,
         params: {
           trackTotalHits: options.trackTotalHits
         },
-        data: options.dslRequest
+        data: options.dslRequest || {}
       })
       return result.data
     }

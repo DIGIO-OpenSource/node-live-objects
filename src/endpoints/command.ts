@@ -18,7 +18,8 @@ export default class Command{
     });
 
     try{
-      const result = await call.get({
+      const result = await call.request({
+        method: 'get',
         url: formatRoute(URLS.COMMANDS.GET,[
           {
             name: ':commandId',
@@ -39,7 +40,8 @@ export default class Command{
     });
 
     try{
-      const result = await call.delete({
+      const result = await call.request({
+        method: 'delete',
         url: formatRoute(URLS.COMMANDS.DELETE,[
           {
             name: ':commandId',
@@ -60,7 +62,8 @@ export default class Command{
     });
 
     try{
-      const result = await call.get({
+      const result = await call.request({
+        method: 'get',
         url: formatRoute(URLS.COMMANDS.GET_STATUS,[
           {
             name: ':commandId',
@@ -81,7 +84,8 @@ export default class Command{
     });
 
     try{
-      const result = await call.put({
+      const result = await call.request({
+        method: 'put',
         url: formatRoute(URLS.COMMANDS.UPDATE_STATUS,[
           {
             name: ':commandId',
@@ -108,7 +112,8 @@ export default class Command{
     });
 
     try{
-      const result = await call.post({
+      const result = await call.request({
+        method: 'post',
         url: formatRoute(URLS.COMMANDS.CREATE,[
           {
             name: ':deviceId',
@@ -133,7 +138,8 @@ export default class Command{
     });
 
     try{
-      const result = await call.get({
+      const result = await call.request({
+        method: 'get',
         url: formatRoute(URLS.COMMANDS.LIST,[
           {
             name: ':deviceId',

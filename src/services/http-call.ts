@@ -10,58 +10,15 @@ export default class HttpCall {
     axios.defaults.headers.common['X-API-Key'] = config.apiKey;
   }
 
-  async get(options: AxiosRequestConfig): Promise<AxiosResponse> {
+  async request(options: AxiosRequestConfig): Promise<AxiosResponse> {
     try {
-      return await axios({
-        method: 'get',
-        url: options.url,
-        params: options.params,
-        headers: options.headers
-      })
-    } catch (error) {
-      this.processError(error)
-    }
-  }
-
-  async post(options: AxiosRequestConfig): Promise<AxiosResponse> {
-    try {
-      return await axios({
-        method: 'post',
-        url: options.url,
-        params: options.params,
-        data: options.data
-      })
-    } catch (error) {
-      this.processError(error)
-    }
-  }
-
-  async put(options: AxiosRequestConfig): Promise<AxiosResponse> {
-    try {
-      return await axios({
-        method: 'put',
-        url: options.url,
-        params: options.params,
-        data: options.data
-      })
-    } catch (error) {
-      this.processError(error)
-    }
-  }
-
-  async delete(options: AxiosRequestConfig): Promise<AxiosResponse> {
-    try {
-      return await axios({
-        method: 'delete',
-        url: options.url,
-      })
+      return await axios(options)
     } catch (error) {
       this.processError(error)
     }
   }
 
   processError (error: AxiosError): string | AxiosError {
-    console.log(error)
     if (axios.isAxiosError(error)) {
       throw new Error(JSON.stringify(error.response.data));
     } else {

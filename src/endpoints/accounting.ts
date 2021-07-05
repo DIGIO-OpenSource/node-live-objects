@@ -17,7 +17,8 @@ export default class Accounting{
     });
 
     try{
-      const result = await call.get({
+      const result = await call.request({
+        method: 'get',
         url: URLS.ACCOUNTING.GET_MONTHLY_ACCOUNTING_METRICS,
         params: options
       })
@@ -34,7 +35,8 @@ export default class Accounting{
     });
 
     try{
-      const result = await call.get({
+      const result = await call.request({
+        method: 'get',
         url: URLS.ACCOUNTING.GET_DAILY_ACCOUNTING_METRICS,
         params: options
       })

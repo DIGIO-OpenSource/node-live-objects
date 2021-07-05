@@ -21,7 +21,8 @@ class Accounting {
                 apiKey: this.api_key
             });
             try {
-                const result = yield call.get({
+                const result = yield call.request({
+                    method: 'get',
                     url: enpoints_1.URLS.ACCOUNTING.GET_MONTHLY_ACCOUNTING_METRICS,
                     params: options
                 });
@@ -38,7 +39,8 @@ class Accounting {
                 apiKey: this.api_key
             });
             try {
-                const result = yield call.get({
+                const result = yield call.request({
+                    method: 'get',
                     url: enpoints_1.URLS.ACCOUNTING.GET_DAILY_ACCOUNTING_METRICS,
                     params: options
                 });

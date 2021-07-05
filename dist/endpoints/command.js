@@ -22,7 +22,8 @@ class Command {
                 apiKey: this.api_key
             });
             try {
-                const result = yield call.get({
+                const result = yield call.request({
+                    method: 'get',
                     url: url_1.formatRoute(enpoints_1.URLS.COMMANDS.GET, [
                         {
                             name: ':commandId',
@@ -43,7 +44,8 @@ class Command {
                 apiKey: this.api_key
             });
             try {
-                const result = yield call.delete({
+                const result = yield call.request({
+                    method: 'delete',
                     url: url_1.formatRoute(enpoints_1.URLS.COMMANDS.DELETE, [
                         {
                             name: ':commandId',
@@ -64,7 +66,8 @@ class Command {
                 apiKey: this.api_key
             });
             try {
-                const result = yield call.get({
+                const result = yield call.request({
+                    method: 'get',
                     url: url_1.formatRoute(enpoints_1.URLS.COMMANDS.GET_STATUS, [
                         {
                             name: ':commandId',
@@ -85,7 +88,8 @@ class Command {
                 apiKey: this.api_key
             });
             try {
-                const result = yield call.put({
+                const result = yield call.request({
+                    method: 'put',
                     url: url_1.formatRoute(enpoints_1.URLS.COMMANDS.UPDATE_STATUS, [
                         {
                             name: ':commandId',
@@ -112,7 +116,8 @@ class Command {
                 apiKey: this.api_key
             });
             try {
-                const result = yield call.post({
+                const result = yield call.request({
+                    method: 'post',
                     url: url_1.formatRoute(enpoints_1.URLS.COMMANDS.CREATE, [
                         {
                             name: ':deviceId',
@@ -137,7 +142,8 @@ class Command {
                 apiKey: this.api_key
             });
             try {
-                const result = yield call.get({
+                const result = yield call.request({
+                    method: 'get',
                     url: url_1.formatRoute(enpoints_1.URLS.COMMANDS.LIST, [
                         {
                             name: ':deviceId',

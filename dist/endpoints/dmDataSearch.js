@@ -21,12 +21,13 @@ class DmDataSearch {
                 apiKey: this.api_key
             });
             try {
-                const result = yield call.post({
+                const result = yield call.request({
+                    method: 'post',
                     url: enpoints_1.URLS.DM_DATA_SEARCH.SEARCH,
                     params: {
                         trackTotalHits: options.trackTotalHits
                     },
-                    data: options.dslRequest
+                    data: options.dslRequest || {}
                 });
                 return result.data;
             }
@@ -41,12 +42,13 @@ class DmDataSearch {
                 apiKey: this.api_key
             });
             try {
-                const result = yield call.post({
+                const result = yield call.request({
+                    method: 'post',
                     url: enpoints_1.URLS.DM_DATA_SEARCH.SEARCH_HITS,
                     params: {
                         trackTotalHits: options.trackTotalHits
                     },
-                    data: options.dslRequest
+                    data: options.dslRequest || {}
                 });
                 return result.data;
             }
