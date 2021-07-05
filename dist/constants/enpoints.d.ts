@@ -7,5 +7,13 @@ declare const URLS: {
         SEARCH: string;
         SEARCH_HITS: string;
     };
+    COMMANDS: {
+        GET: string;
+        DELETE: string;
+        GET_STATUS: string;
+        UPDATE_STATUS: string;
+        LIST: string;
+        CREATE: string;
+    };
 };
 export { URLS };

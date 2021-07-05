@@ -21,7 +21,8 @@ class HttpCall {
                 return yield axios_1.default({
                     method: 'get',
                     url: options.url,
-                    params: options.params
+                    params: options.params,
+                    headers: options.headers
                 });
             }
             catch (error) {
@@ -44,7 +45,36 @@ class HttpCall {
             }
         });
     }
+    put(options) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                return yield axios_1.default({
+                    method: 'put',
+                    url: options.url,
+                    params: options.params,
+                    data: options.data
+                });
+            }
+            catch (error) {
+                this.processError(error);
+            }
+        });
+    }
+    delete(options) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                return yield axios_1.default({
+                    method: 'delete',
+                    url: options.url,
+                });
+            }
+            catch (error) {
+                this.processError(error);
+            }
+        });
+    }
     processError(error) {
+        console.log(error);
         if (axios_1.default.isAxiosError(error)) {
             throw new Error(JSON.stringify(error.response.data));
         }

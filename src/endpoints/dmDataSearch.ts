@@ -1,6 +1,5 @@
 import {URLS} from '../constants/enpoints'
 import HttpCall from '../services/http-call'
-import { AxiosResponse } from "axios";
 import { DmDataSearchOptions, DmDataSearchHitsOptions } from '../types/endpoints/dmDataSearch/options';
 import { LiveObjectsConfig } from "../types/endpoints/general/options";
 
@@ -12,7 +11,7 @@ export default class DmDataSearch{
     this.api_key = config.api_key;
   }
 
-  async search(options: DmDataSearchOptions): Promise<String | AxiosResponse>{
+  async search(options: DmDataSearchOptions): Promise<any>{
     const call =  new HttpCall({
       apiKey: this.api_key
     });
@@ -23,9 +22,7 @@ export default class DmDataSearch{
         params: {
           trackTotalHits: options.trackTotalHits
         },
-        data: {
-          dslRequest: options.dslRequest
-        }
+        data: options.dslRequest
       })
       return result.data
     }
@@ -34,7 +31,7 @@ export default class DmDataSearch{
     }
   }
 
-  async searchHits(options: DmDataSearchHitsOptions): Promise<String | AxiosResponse>{
+  async searchHits(options: DmDataSearchHitsOptions): Promise<any>{
     const call =  new HttpCall({
       apiKey: this.api_key
     });
@@ -45,9 +42,7 @@ export default class DmDataSearch{
         params: {
           trackTotalHits: options.trackTotalHits
         },
-        data: {
-          dslRequest: options.dslRequest
-        }
+        data: options.dslRequest
       })
       return result.data
     }

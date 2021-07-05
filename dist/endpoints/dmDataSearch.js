@@ -15,6 +15,26 @@ class DmDataSearch {
     constructor(config) {
         this.api_key = config.api_key;
     }
+    search(options) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const call = new http_call_1.default({
+                apiKey: this.api_key
+            });
+            try {
+                const result = yield call.post({
+                    url: enpoints_1.URLS.DM_DATA_SEARCH.SEARCH,
+                    params: {
+                        trackTotalHits: options.trackTotalHits
+                    },
+                    data: options.dslRequest
+                });
+                return result.data;
+            }
+            catch (e) {
+                throw new Error(e.message);
+            }
+        });
+    }
     searchHits(options) {
         return __awaiter(this, void 0, void 0, function* () {
             const call = new http_call_1.default({
@@ -26,9 +46,7 @@ class DmDataSearch {
                     params: {
                         trackTotalHits: options.trackTotalHits
                     },
-                    data: {
-                        dslRequest: options.dslRequest
-                    }
+                    data: options.dslRequest
                 });
                 return result.data;
             }

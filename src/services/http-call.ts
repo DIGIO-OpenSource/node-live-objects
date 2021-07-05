@@ -15,7 +15,8 @@ export default class HttpCall {
       return await axios({
         method: 'get',
         url: options.url,
-        params: options.params
+        params: options.params,
+        headers: options.headers
       })
     } catch (error) {
       this.processError(error)
@@ -35,7 +36,32 @@ export default class HttpCall {
     }
   }
 
+  async put(options: AxiosRequestConfig): Promise<AxiosResponse> {
+    try {
+      return await axios({
+        method: 'put',
+        url: options.url,
+        params: options.params,
+        data: options.data
+      })
+    } catch (error) {
+      this.processError(error)
+    }
+  }
+
+  async delete(options: AxiosRequestConfig): Promise<AxiosResponse> {
+    try {
+      return await axios({
+        method: 'delete',
+        url: options.url,
+      })
+    } catch (error) {
+      this.processError(error)
+    }
+  }
+
   processError (error: AxiosError): string | AxiosError {
+    console.log(error)
     if (axios.isAxiosError(error)) {
       throw new Error(JSON.stringify(error.response.data));
     } else {
