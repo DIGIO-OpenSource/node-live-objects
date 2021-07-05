@@ -1,21 +1,14 @@
 import { URLS } from '../constants/enpoints'
 import HttpCall from '../services/http-call'
-import { LiveObjectsConfig } from "../types/endpoints/general/options";
 import { CreateCommandOptions, DeleteCommandOptions, GetCommandListOptions, GetCommandOptions, GetCommandStatusOptions, UpdateCommandStatusOptions } from '../types/endpoints/command/options';
 import { formatRoute } from '../utils/url';
 
 export default class Command{
 
-  private api_key: string;
-
-  constructor( config: LiveObjectsConfig){
-    this.api_key = config.api_key;
-  }
+  constructor(){}
 
   async getCommand(options: GetCommandOptions): Promise<any>{
-    const call =  new HttpCall({
-      apiKey: this.api_key
-    });
+    const call =  new HttpCall();
 
     try{
       const result = await call.request({
@@ -35,9 +28,7 @@ export default class Command{
   }
 
   async deleteCommand(options: DeleteCommandOptions): Promise<any>{
-    const call =  new HttpCall({
-      apiKey: this.api_key
-    });
+    const call =  new HttpCall();
 
     try{
       const result = await call.request({
@@ -57,9 +48,7 @@ export default class Command{
   }
 
   async getCommandStatus(options: GetCommandStatusOptions): Promise<any>{
-    const call =  new HttpCall({
-      apiKey: this.api_key
-    });
+    const call =  new HttpCall();
 
     try{
       const result = await call.request({
@@ -79,9 +68,7 @@ export default class Command{
   }
 
   async updateCommandStatus(options: UpdateCommandStatusOptions): Promise<any>{
-    const call =  new HttpCall({
-      apiKey: this.api_key
-    });
+    const call =  new HttpCall();
 
     try{
       const result = await call.request({
@@ -107,9 +94,7 @@ export default class Command{
   }
 
   async createCommand(options: CreateCommandOptions): Promise<any>{
-    const call =  new HttpCall({
-      apiKey: this.api_key
-    });
+    const call =  new HttpCall();
 
     try{
       const result = await call.request({
@@ -133,9 +118,7 @@ export default class Command{
   }
 
   async getCommandList(options: GetCommandListOptions): Promise<any>{
-    const call =  new HttpCall({
-      apiKey: this.api_key
-    });
+    const call =  new HttpCall();
 
     try{
       const result = await call.request({

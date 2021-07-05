@@ -12,9 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = require("axios");
 axios_1.default.defaults.baseURL = 'https://liveobjects.orange-business.com/api';
 class HttpCall {
-    constructor(config) {
-        axios_1.default.defaults.headers.common['X-API-Key'] = config.apiKey;
-    }
+    constructor() { }
     request(options) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

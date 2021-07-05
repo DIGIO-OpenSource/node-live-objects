@@ -1,20 +1,13 @@
 import { GetDailyAccountingMetricsOptions, GetMonthlyAccountingMetricsOptions } from "../types/endpoints/accounting/options";
 import {URLS} from '../constants/enpoints'
 import HttpCall from '../services/http-call'
-import { LiveObjectsConfig } from "../types/endpoints/general/options";
 
 export default class Accounting{
 
-  api_key: string;
-
-  constructor( config: LiveObjectsConfig){
-    this.api_key = config.api_key;
-  }
+  constructor(){}
 
   async getMonthlyAccountingMetrics(options: GetMonthlyAccountingMetricsOptions): Promise<any>{
-    const call =  new HttpCall({
-      apiKey: this.api_key
-    });
+    const call =  new HttpCall();
 
     try{
       const result = await call.request({
@@ -30,9 +23,7 @@ export default class Accounting{
   }
 
   async getDailyAccountingMetrics(options: GetDailyAccountingMetricsOptions): Promise<any>{
-    const call =  new HttpCall({
-      apiKey: this.api_key
-    });
+    const call =  new HttpCall();
 
     try{
       const result = await call.request({

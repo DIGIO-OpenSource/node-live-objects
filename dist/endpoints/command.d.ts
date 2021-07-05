@@ -1,8 +1,6 @@
-import { LiveObjectsConfig } from "../types/endpoints/general/options";
 import { CreateCommandOptions, DeleteCommandOptions, GetCommandListOptions, GetCommandOptions, GetCommandStatusOptions, UpdateCommandStatusOptions } from '../types/endpoints/command/options';
 export default class Command {
-    private api_key;
-    constructor(config: LiveObjectsConfig);
+    constructor();
     getCommand(options: GetCommandOptions): Promise<any>;
     deleteCommand(options: DeleteCommandOptions): Promise<any>;
     getCommandStatus(options: GetCommandStatusOptions): Promise<any>;

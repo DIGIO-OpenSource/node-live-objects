@@ -1,20 +1,13 @@
 import {URLS} from '../constants/enpoints'
 import HttpCall from '../services/http-call'
 import { DmDataSearchOptions, DmDataSearchHitsOptions } from '../types/endpoints/dmDataSearch/options';
-import { LiveObjectsConfig } from "../types/endpoints/general/options";
 
 export default class DmDataSearch{
 
-  private api_key: string;
-
-  constructor( config: LiveObjectsConfig){
-    this.api_key = config.api_key;
-  }
+  constructor( ){}
 
   async search(options: DmDataSearchOptions): Promise<any>{
-    const call =  new HttpCall({
-      apiKey: this.api_key
-    });
+    const call =  new HttpCall();
 
     try{
       const result = await call.request({
@@ -33,9 +26,7 @@ export default class DmDataSearch{
   }
 
   async searchHits(options: DmDataSearchHitsOptions): Promise<any>{
-    const call =  new HttpCall({
-      apiKey: this.api_key
-    });
+    const call =  new HttpCall();
 
     try{
       const result = await call.request({

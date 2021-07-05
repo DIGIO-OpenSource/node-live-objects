@@ -12,14 +12,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const enpoints_1 = require("../constants/enpoints");
 const http_call_1 = require("../services/http-call");
 class Accounting {
-    constructor(config) {
-        this.api_key = config.api_key;
-    }
+    constructor() { }
     getMonthlyAccountingMetrics(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            const call = new http_call_1.default({
-                apiKey: this.api_key
-            });
+            const call = new http_call_1.default();
             try {
                 const result = yield call.request({
                     method: 'get',
@@ -35,9 +31,7 @@ class Accounting {
     }
     getDailyAccountingMetrics(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            const call = new http_call_1.default({
-                apiKey: this.api_key
-            });
+            const call = new http_call_1.default();
             try {
                 const result = yield call.request({
                     method: 'get',

@@ -13,14 +13,10 @@ const enpoints_1 = require("../constants/enpoints");
 const http_call_1 = require("../services/http-call");
 const url_1 = require("../utils/url");
 class Command {
-    constructor(config) {
-        this.api_key = config.api_key;
-    }
+    constructor() { }
     getCommand(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            const call = new http_call_1.default({
-                apiKey: this.api_key
-            });
+            const call = new http_call_1.default();
             try {
                 const result = yield call.request({
                     method: 'get',
@@ -40,9 +36,7 @@ class Command {
     }
     deleteCommand(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            const call = new http_call_1.default({
-                apiKey: this.api_key
-            });
+            const call = new http_call_1.default();
             try {
                 const result = yield call.request({
                     method: 'delete',
@@ -62,9 +56,7 @@ class Command {
     }
     getCommandStatus(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            const call = new http_call_1.default({
-                apiKey: this.api_key
-            });
+            const call = new http_call_1.default();
             try {
                 const result = yield call.request({
                     method: 'get',
@@ -84,9 +76,7 @@ class Command {
     }
     updateCommandStatus(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            const call = new http_call_1.default({
-                apiKey: this.api_key
-            });
+            const call = new http_call_1.default();
             try {
                 const result = yield call.request({
                     method: 'put',
@@ -112,9 +102,7 @@ class Command {
     }
     createCommand(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            const call = new http_call_1.default({
-                apiKey: this.api_key
-            });
+            const call = new http_call_1.default();
             try {
                 const result = yield call.request({
                     method: 'post',
@@ -138,9 +126,7 @@ class Command {
     }
     getCommandList(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            const call = new http_call_1.default({
-                apiKey: this.api_key
-            });
+            const call = new http_call_1.default();
             try {
                 const result = yield call.request({
                     method: 'get',

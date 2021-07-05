@@ -1,14 +1,10 @@
-import axios, { AxiosError, AxiosPromise, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { CallConfig } from '../types/services/http-call';
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 axios.defaults.baseURL = 'https://liveobjects.orange-business.com/api'
 
 export default class HttpCall {
 
-
-  constructor(config: CallConfig){
-    axios.defaults.headers.common['X-API-Key'] = config.apiKey;
-  }
+  constructor(){}
 
   async request(options: AxiosRequestConfig): Promise<AxiosResponse> {
     try {
