@@ -1,4 +1,4 @@
-const URLS ={
+const URLS = {
   ACCOUNTING: {
     GET_DAILY_ACCOUNTING_METRICS: '/v1/accounting/daily',
     GET_MONTHLY_ACCOUNTING_METRICS: '/v1/accounting/monthly'
@@ -29,8 +29,16 @@ const URLS ={
     DELETE: '/v1/deviceMgt/devices/:deviceId',
     UPDATE: '/v1/deviceMgt/devices/:deviceId',
     GET_STREAMID: '/v1/deviceMgt/devices/:deviceId/data/streams'
+  },
+  EVENT_ACTIVITY: {
+    LIST_RULE: '/v0/eventprocessing/activity/rules',
+    CREATE_RULE: '/v0/eventprocessing/activity/rules',
+    GET_RULE: '/v0/eventprocessing/activity/rules/:activityRuleId',
+    UPDATE_RULE: '/v0/eventprocessing/activity/rules/:activityRuleId',
+    DELETE_RULE: '/v0/eventprocessing/activity/rules/:activityRuleId',
+    LIST_STATES: '/v0/eventprocessing/activity/states',
+    MUTE_STATE: '/v0/eventprocessing/activity/states/mute'
   }
-
 }
 
 export {URLS}

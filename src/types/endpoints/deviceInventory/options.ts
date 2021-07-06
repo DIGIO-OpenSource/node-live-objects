@@ -38,7 +38,7 @@ export interface DeleteDeviceOptions{
 
 export interface UpdateDeviceOptions{
   deviceId: string,
-  deviceUpdate: string
+  deviceUpdate: object
 }
 
 export interface GetDeviceStreamIdOptions{
