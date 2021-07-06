@@ -38,6 +38,15 @@ const URLS = {
     DELETE_RULE: '/v0/eventprocessing/activity/rules/:activityRuleId',
     LIST_STATES: '/v0/eventprocessing/activity/states',
     MUTE_STATE: '/v0/eventprocessing/activity/states/mute'
+  },
+  DECODERS_CSV: {
+    LIST: '/v0/decoders/csv',
+    CREATE: '/v0/decoders/csv',
+    TEST: '/v0/decoders/csv/test',
+    UPDATE: '/v0/decoders/csv/:decoderId',
+    GET: '/v0/decoders/csv/:decoderId',
+    DELETE: '/v0/decoders/csv/:decoderId',
+    ACTIVATE: '/v0/decoders/csv/:decoderId/enabled'
   }
 }
 

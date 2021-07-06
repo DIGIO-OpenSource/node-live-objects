@@ -7,6 +7,7 @@ export default class HttpCall {
   constructor(){}
 
   async request(options: AxiosRequestConfig): Promise<AxiosResponse> {
+    console.log(options.url)
     try {
       return await axios(options)
     } catch (error) {
