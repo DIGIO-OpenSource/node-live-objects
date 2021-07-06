@@ -80,7 +80,7 @@ export default class Command{
           }
         ]),
         params: {
-          force: options.force
+          force: options.force || false
         },
         data: {
           dslRequest: options.newStatus

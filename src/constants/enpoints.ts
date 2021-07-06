@@ -14,6 +14,13 @@ const URLS ={
     UPDATE_STATUS: '/v1/deviceMgt/commands/:commandId/status',
     LIST: '/v1/deviceMgt/devices/:deviceId/commands',
     CREATE: '/v1/deviceMgt/devices/:deviceId/commands'
+  },
+  DEVICE_CONFIGURATION: {
+    GET: '/v1/deviceMgt/devices/:deviceId/config',
+    SET: '/v1/deviceMgt/devices/:deviceId/config',
+    GET_PARAMETERS: '/v1/deviceMgt/devices/:deviceId/config/parameters',
+    GET_PARAMETER_STATE: '/v1/deviceMgt/devices/:deviceId/config/parameters/:paramKey',
+    UPDATE_PARAMETER_STATE: '/v1/deviceMgt/devices/:deviceId/config/parameters/:paramKey/status'
   }
 
 }
