@@ -21,6 +21,14 @@ const URLS ={
     GET_PARAMETERS: '/v1/deviceMgt/devices/:deviceId/config/parameters',
     GET_PARAMETER_STATE: '/v1/deviceMgt/devices/:deviceId/config/parameters/:paramKey',
     UPDATE_PARAMETER_STATE: '/v1/deviceMgt/devices/:deviceId/config/parameters/:paramKey/status'
+  },
+  DEVICE_INVENTORY: {
+    LIST: '/v1/deviceMgt/devices',
+    CREATE: '/v1/deviceMgt/devices',
+    GET: '/v1/deviceMgt/devices/:deviceId',
+    DELETE: '/v1/deviceMgt/devices/:deviceId',
+    UPDATE: '/v1/deviceMgt/devices/:deviceId',
+    GET_STREAMID: '/v1/deviceMgt/devices/:deviceId/data/streams'
   }
 
 }

@@ -4,6 +4,7 @@ import Accounting from './endpoints/accounting'
 import DmDataSearch from "./endpoints/dmDataSearch";
 import Command from "./endpoints/command";
 import DeviceConfiguration from "./endpoints/deviceConfiguration";
+import DeviceInventory from "./endpoints/deviceInventory";
 
 export default class LiveObjectsApi {
 
@@ -11,6 +12,7 @@ export default class LiveObjectsApi {
   dmDataSearch: DmDataSearch
   command: Command
   deviceConfiguration: DeviceConfiguration
+  deviceInventory: DeviceInventory
 
   constructor( config: LiveObjectsConfig){
     axios.defaults.headers.common['X-API-Key'] = config.api_key;
@@ -19,5 +21,6 @@ export default class LiveObjectsApi {
     this.dmDataSearch = new DmDataSearch()
     this.command = new Command()
     this.deviceConfiguration = new DeviceConfiguration()
+    this.deviceInventory = new DeviceInventory()
   }
 }
