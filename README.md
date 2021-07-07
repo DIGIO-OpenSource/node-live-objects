@@ -1,4 +1,4 @@
-# node-live-objects
+# live-objects-node
 
 This package is a wrapper around the Live Objects API. It is written in Typescript.
 
@@ -7,7 +7,7 @@ The package is available through NPM.
 
 NPM:
 ```sh
-npm install node-live-objects
+npm install live-objects-node
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install node-live-objects
 Using Typescript or bundler:
 
 ```
-import LiveObjectsApi from 'node-live-objects'
+import LiveObjectsApi from 'live-objects-node'
 
 const api = new LiveObjectsApi({
   api_key:'YOUR_API_KEY'
@@ -25,7 +25,7 @@ const api = new LiveObjectsApi({
 Using native NodeJS:
 
 ```
-const LiveObjectsApi = require('node-live-objects').default
+const LiveObjectsApi = require('live-objects-node').default
 
 const api = new LiveObjectsApi({
   api_key:'YOUR_API_KEY'
