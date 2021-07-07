@@ -20,7 +20,8 @@
     "lint": "eslint --ignore-path .gitignore ."
   },
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "typescript": "^4.3.5"
   },
   "devDependencies": {}
 }
