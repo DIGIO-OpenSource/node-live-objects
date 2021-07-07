@@ -7,7 +7,7 @@ The package is available through NPM.
 
 NPM:
 ```sh
-npm install node-liveobjects
+npm install node-live-objects
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install node-liveobjects
 Using Typescript or bundler:
 
 ```
-import LiveObjectsApi from 'node-liveobjects'
+import LiveObjectsApi from 'node-live-objects'
 
 const api = new LiveObjectsApi({
   api_key:'YOUR_API_KEY'
@@ -25,7 +25,7 @@ const api = new LiveObjectsApi({
 Using native NodeJS:
 
 ```
-const LiveObjectsApi = require('node-liveobjects').default
+const LiveObjectsApi = require('node-live-objects').default
 
 const api = new LiveObjectsApi({
   api_key:'YOUR_API_KEY'
