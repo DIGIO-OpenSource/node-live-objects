@@ -1,5 +1,5 @@
 {
-  "name": "node-liveobjects",
+  "name": "node-live-objects",
   "author": "Néstor Jódar Toledo",
   "version": "0.1.0",
   "description": "This package is a wrapper around Live Objects API",
