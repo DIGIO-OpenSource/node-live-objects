@@ -1,9 +1,12 @@
 {
   "name": "live-objects-node",
   "author": "Néstor Jódar Toledo",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "This package is a wrapper around Live Objects API",
-  "repository": "github.com/DIGIO-OpenSource/node-live-objects",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DIGIO-OpenSource/node-live-objects.git"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
