@@ -1,4 +1,4 @@
-# node-liveobjects
+# node-live-objects
 
 This package is a wrapper around the Live Objects API. It is written in Typescript.
 
