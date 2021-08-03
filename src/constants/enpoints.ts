@@ -7,6 +7,9 @@ const URLS = {
     SEARCH: '/v1/data/search',
     SEARCH_HITS: '/v1/data/search/hits'
   },
+  DM_DATA_STORE: {
+    GET: '/v0/data/streams/:streamId',
+  },
   COMMANDS: {
     GET: '/v1/deviceMgt/commands/:commandId',
     DELETE: '/v1/deviceMgt/commands/:commandId',
