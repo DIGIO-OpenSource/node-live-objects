@@ -78,6 +78,32 @@ export default class DeviceInventory{
     }
   }
 
+  async deviceExists(options?: GetDeviceOptions): Promise<any>{
+    const call =  new HttpCall();
+
+    try{
+      const result = await call.request({
+        method: 'get',
+        url: formatRoute(URLS.DEVICE_INVENTORY.GET,[
+          {
+            name: ':deviceId',
+            value: options.deviceId
+          }
+        ])
+      })
+      if(!result.data){
+        return false
+      }
+      return true
+    }
+    catch(e){
+      if(JSON.parse(e.message).code === "DM_DEVICE_NOT_FOUND"){
+        return false
+      }
+      throw new Error(e.message);
+    }
+  }
+
   async deleteDevice(options?: DeleteDeviceOptions): Promise<any>{
     const call =  new HttpCall();
 
