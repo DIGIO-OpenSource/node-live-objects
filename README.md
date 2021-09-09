@@ -50,3 +50,26 @@ async function getSomeMetrics(){
 
 ```
 
+
+## Local testing
+The first step is to link the project.
+```
+  npm link
+```
+Once this is done, you must build the project
+```
+npm run start
+```
+
+Now we will go to the project that we want to link this library
+```
+cd testLiveObject
+```
+Once in the project, we must take the name of the package.json from the liveObjects library: **live-objects-node**
+
+And run the following command:
+```
+npm link live-objects-node
+```
+
+With these steps, they will already be communicated, with the changes you make locally.

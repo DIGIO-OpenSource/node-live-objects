@@ -7,6 +7,7 @@ import Command from "./endpoints/command";
 import DeviceConfiguration from "./endpoints/deviceConfiguration";
 import DeviceInventory from "./endpoints/deviceInventory";
 import EventActivity from "./endpoints/eventActivity";
+import EventProcessing from "./endpoints/eventProcessing";
 import DecodersCsv from "./endpoints/decodersCsv";
 
 export default class LiveObjectsApi {
@@ -19,6 +20,7 @@ export default class LiveObjectsApi {
   deviceInventory: DeviceInventory
   eventActivity: EventActivity
   decodersCsv: DecodersCsv
+  eventProcessing: EventProcessing
 
   constructor( config: LiveObjectsConfig){
     axios.defaults.headers.common['X-API-Key'] = config.api_key;
@@ -31,5 +33,6 @@ export default class LiveObjectsApi {
     this.deviceInventory = new DeviceInventory()
     this.eventActivity = new EventActivity()
     this.decodersCsv = new DecodersCsv()
+    this.eventProcessing = new EventProcessing()
   }
 }

@@ -33,6 +33,12 @@ const URLS = {
     UPDATE: '/v1/deviceMgt/devices/:deviceId',
     GET_STREAMID: '/v1/deviceMgt/devices/:deviceId/data/streams'
   },
+  EVENT_PROCESSING: {
+    CREATE_CONTEXT: '/v0/eventprocessing/context/:contextKey',
+    CREATE_RULE_TEST: '/v0/eventprocessing/stateprocessing-rule/test',
+    CREATE_RULE: '/v0/eventprocessing/stateprocessing-rule',
+    UPDATE_RULE: '/v0/eventprocessing/stateprocessing-rule/:stateProcessingRuleId'
+  },
   EVENT_ACTIVITY: {
     LIST_RULE: '/v0/eventprocessing/activity/rules',
     CREATE_RULE: '/v0/eventprocessing/activity/rules',
