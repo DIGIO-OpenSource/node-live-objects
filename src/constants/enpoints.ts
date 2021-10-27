@@ -56,7 +56,10 @@ const URLS = {
     GET: '/v0/decoders/csv/:decoderId',
     DELETE: '/v0/decoders/csv/:decoderId',
     ACTIVATE: '/v0/decoders/csv/:decoderId/enabled'
-  }
+  },
+  TRIGGERS_ACTIONS_POLICES: {
+    CREATE_ACTION_POLICES: '/v1/event2action/actionPolicies',
+  },
 }
 
 export {URLS}
